@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "start:dev": "tsx app.ts"
   },
   "keywords": [],
