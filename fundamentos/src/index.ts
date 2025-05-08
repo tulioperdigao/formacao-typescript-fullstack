@@ -1,25 +1,25 @@
-interface Pessoa {
-    nome: string,
-    idade: number,
-    profissao?: string
-}
+const num: number = 15;
 
-const pessoa: Pessoa = {
-    nome: 'tugão',
-    idade: 21
-}
+if(num > 15) {
+    console.log('Num é maior que 15.');
+} else if(num === 15) {
+    console.log('Num é 15.');
+} else {
+    console.log('Num é menor que 15.');
+};
 
-const pessoa2: Pessoa = {
-    nome: 'Kaio',
-    idade: 31,
-    profissao: 'QA'
-}
+const typeUser = {
+    admin: 'Seja bem-vindo admin.',
+    student: 'Você é um estudante.',
+    viewer: 'Você pode visualizar'
+};
 
-const arrayPessoa: Array<Pessoa> = [
-    pessoa,
-    pessoa2,
-]
+function validateUser(user: string) {
+    console.log(typeUser[user as keyof typeof typeUser]);
+};
 
-const arrayNum: number[] = [
-    1, 2, 3, 4
-]
+const usuario = 'admin';
+
+validateUser(usuario);
+validateUser('student');
+validateUser('viewer');
