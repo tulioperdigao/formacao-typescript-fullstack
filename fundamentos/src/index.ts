@@ -3,10 +3,11 @@
 // name, accountNumber -> Atributos
 // depositar, sacar -> Métodos
 
-class Account {
+abstract class Account {
     // Atributos
     name: string;
     accountNumber: number;
+    balance: number = 0;
 
     // Construtor
     constructor(name: string, accountNumber: number) {
@@ -21,10 +22,19 @@ class Account {
     withdraw = () => {
         console.log('Você sacou!')
     }
+    getBalance = () => {
+        console.log(this.balance)
+    }
 }
 
-const newAccount: Account = new Account('Tulio', 1);
-console.log(newAccount);
+class PeopleAccount extends Account{
+    doc_id: number;
 
-const account: Account = new Account('Kaio', 1);
-account.deposit();
+    constructor(doc_id: number, name: string, accountNumber: number) {
+        super(name, accountNumber);
+        this.doc_id = doc_id;
+    }
+}
+
+const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Tulio', 10);
+console.log(peopleAccount);
