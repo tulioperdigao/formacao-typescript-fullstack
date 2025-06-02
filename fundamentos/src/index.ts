@@ -1,17 +1,22 @@
-const lista: Array<number> = [1, 2, 3, 4];
+// this quando passado dentro de qualquer método da classe, dizemos que ele acesse aquele atributo dentro daquela classe.
 
-//const listaString: string[] = ['tulio', 'lady', 'bruna'];
-//const buscaNum = lista.find(num =>num > 2);
-//console.log(buscaNum);
+class User {
+    name: string = 'Tulio'
+    age: number = 21
 
-// lista.forEach(num => {
-//     if (num > 2) {
-//         console.log(num);
-//     }
-// })
-
-lista.map(num => {
-    if (num > 2) {
-        console.log(num);
+    // toda classe precisa do seu método construtor
+    constructor(name:string, age:number){
+        this.name = name,
+        this.age = age
     }
-})
+
+    showName = () => {
+        console.log(this.name)
+    }
+}
+
+const user = new User('Tulio', 21);
+user.showName();
+
+const otherUser = new User('Kaio', 31);
+user.showName();
