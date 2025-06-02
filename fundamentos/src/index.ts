@@ -1,22 +1,30 @@
-// this quando passado dentro de qualquer método da classe, dizemos que ele acesse aquele atributo dentro daquela classe.
+// Sistema Bancário Simples
 
-class User {
-    name: string = 'Tulio'
-    age: number = 21
+// name, accountNumber -> Atributos
+// depositar, sacar -> Métodos
 
-    // toda classe precisa do seu método construtor
-    constructor(name:string, age:number){
-        this.name = name,
-        this.age = age
+class Account {
+    // Atributos
+    name: string;
+    accountNumber: number;
+
+    // Construtor
+    constructor(name: string, accountNumber: number) {
+        this.name = name;
+        this.accountNumber = accountNumber;
     }
 
-    showName = () => {
-        console.log(this.name)
+    // Métodos
+    deposit = () => {
+        console.log('Você depositou!');
+    }
+    withdraw = () => {
+        console.log('Você sacou!')
     }
 }
 
-const user = new User('Tulio', 21);
-user.showName();
+const newAccount: Account = new Account('Tulio', 1);
+console.log(newAccount);
 
-const otherUser = new User('Kaio', 31);
-user.showName();
+const account: Account = new Account('Kaio', 1);
+account.deposit();
