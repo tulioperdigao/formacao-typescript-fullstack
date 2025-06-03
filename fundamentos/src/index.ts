@@ -5,8 +5,6 @@
 import { CompanyAccount } from './class/CompanyAccount';
 import {PeopleAccount} from './class/PeopleAccount';
 
+
 const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Tulio', 10);
 peopleAccount.deposit();
-
-const companyAccount: CompanyAccount = new CompanyAccount('Vis', 2);
-companyAccount.deposit();

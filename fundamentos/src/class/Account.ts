@@ -1,8 +1,9 @@
 export abstract class Account {
     // Atributos
-    name: string;
+    private name: string;
     accountNumber: number;
     balance: number = 0;
+    private status: boolean = true;
 
     // Construtor
     constructor(name: string, accountNumber: number) {
@@ -11,13 +12,32 @@ export abstract class Account {
     }
 
     // Métodos
+    setName = (name: string): void => {
+        this.name = name;
+        console.log('Nome alterado com sucesso!');
+    }
+
+    getName = (): string => {
+        return this.name;
+    }
+
     deposit = (): void => {
-        console.log('Você depositou!');
+        if (this.validateStatus()) {
+            console.log('Você depositou!')
+        }
     }
     withdraw = (): void => {
-        console.log('Você sacou!')
+        console.log('Você sacou!');
     }
     getBalance = (): void => {
-        console.log(this.balance)
+        console.log(this.balance);
+    }
+
+    private validateStatus = (): boolean => {
+        if (this.status) {
+            return this.status;
+        }
+
+        throw new Error('Conta inválida!');
     }
 }
