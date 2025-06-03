@@ -1,7 +1,7 @@
 export abstract class Account {
     // Atributos
     private name: string;
-    accountNumber: number;
+    private readonly accountNumber: number;
     balance: number = 0;
     private status: boolean = true;
 
