@@ -1,13 +1,9 @@
-import React from 'react';
-import {Card} from './components/card'
-import { Header } from './components/header';
-import { Footer } from './components/footer';
+import { Card } from './components/card';
+import { Layout } from './components/layout';
 
 function App() {
   return (
-    <>
-      <Header/>
-      <div>
+    <Layout>
         Hello World
         <Card 
           id={1}
@@ -29,9 +25,7 @@ function App() {
           paragraph='SQL'
           details='SQL para banco de dados'
         />
-      </div>
-      <Footer/>
-    </>
+    </Layout>
   );
 }
 
