@@ -1,9 +1,19 @@
 import { Layout } from './components/layout';
+import styled from 'styled-components';
+
+const Box = styled.div`
+  background-color: orange;
+  border-radius: 25px;
+  padding-left: 15px;
+  text-align: center;
+`
 
 function App() {
   return (
     <Layout>
-        <h1>Faça o Login</h1>
+        <Box>
+          <h1>Faça o Login</h1>
+        </Box>
         <label htmlFor='emailInput'>
           E-mail
         </label>
